@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="/">
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+
+                    colors: {
+                        primary: tailwind.colors.white
+                    },
+                },},
+                }
+    </script>
+
+
+    </head>
+
+<body class="bg-black font-sans text-white"><div class="mx-auto max-w-2xl px-5 sm:px-8 xl:max-w-3xl"><div class="flex min-h-screen flex-col"><header class="flex items-center justify-between py-8 border-b border-white/[0.06]"><div><a href class="group flex items-center gap-2"><span class="text-white font-mono text-sm font-semibold tracking-tight group-hover:text-sky-400 transition-colors duration-200">ARMWilkinson</span>
+            <span class="text-sky-500/60 font-mono text-xs">.dev</span></a></div>
+    <nav class="hidden sm:flex items-center gap-8"><a href="about" class="text-[11px] uppercase tracking-widest text-slate-400 hover:text-white transition-colors duration-200 font-sans">About</a><a href="blog" class="text-[11px] uppercase tracking-widest text-slate-400 hover:text-white transition-colors duration-200 font-sans">Blog</a><a href="projects" class="text-[11px] uppercase tracking-widest text-slate-400 hover:text-white transition-colors duration-200 font-sans">Projects</a><a href="library" class="text-[11px] uppercase tracking-widest text-slate-400 hover:text-white transition-colors duration-200 font-sans text-sky-400" aria-current="page">Library</a></nav>
+    <button id="toggle-button" aria-label="Toggle Menu" class="sm:hidden text-slate-400 hover:text-white"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg></button>
+    <div id="mobile-menu" class="fixed left-0 top-0 z-10 h-full w-full translate-x-full transform duration-300 ease-in-out bg-gray-950/[0.98]"><div class="flex justify-end"><button id="close-mobile-menu-button" class="mr-8 mt-10 h-8 w-8 text-slate-400" aria-label="Toggle Menu"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></button></div>
+        <nav class="mt-16 px-10"><div class="py-4 border-b border-white/[0.06]"><a href="about" class="text-xl font-mono text-slate-300 hover:text-white transition-colors">About</a></div><div class="py-4 border-b border-white/[0.06]"><a href="blog" class="text-xl font-mono text-slate-300 hover:text-white transition-colors">Blog</a></div><div class="py-4 border-b border-white/[0.06]"><a href="projects" class="text-xl font-mono text-slate-300 hover:text-white transition-colors">Projects</a></div><div class="py-4 border-b border-white/[0.06]"><a href="library" class="text-xl font-mono text-slate-300 hover:text-white transition-colors text-sky-400" aria-current="page">Library</a></div></nav></div></header>
+
+<script>
+    const toggleMobileMenu = () => document.querySelector('#mobile-menu').classList.toggle('translate-x-full');
+    document.querySelector('#toggle-button').addEventListener('click', toggleMobileMenu);
+    document.querySelector('#close-mobile-menu-button').addEventListener('click', toggleMobileMenu);
+</script>
+        <main class="flex-1 py-10"><div class="py-10"><div class="mb-10"><p class="text-[11px] uppercase tracking-widest text-sky-400 font-mono mb-3">Reading</p>
+        <h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-white leading-tight font-sans">Library</h1>
+        <p class="mt-3 text-sm text-slate-500 font-sans">Books on software, computing, and craft.</p></div>
+
+    <div class="border border-white/[0.06] rounded-lg p-10 text-center"><p class="text-[10px] uppercase tracking-widest text-slate-600 font-mono mb-3">Coming soon</p>
+        <p class="text-sm text-slate-500 max-w-xs mx-auto leading-relaxed">
+            Reading notes and recommendations are being written up now.
+        </p></div></div></main>
+        <footer class="border-t border-white/[0.06] py-10 mt-8"><div class="flex flex-col items-center gap-4"><div class="flex gap-3"><a class="flex items-center justify-center w-8 h-8 rounded-md border border-white/10 text-slate-500 hover:border-sky-500/40 hover:text-sky-400 transition-all duration-200" target="_blank" rel="noopener noreferrer" href="https://github.com/ARMWilkinson" aria-label="GitHub"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="hover:text-sky-400 h-6 w-6 fill-current text-gray-200"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"></path></svg></a>
+                    <a class="flex items-center justify-center w-8 h-8 rounded-md border border-white/10 text-slate-500 hover:border-sky-500/40 hover:text-sky-400 transition-all duration-200" target="_blank" rel="noopener noreferrer" href="https://x.com/ARMWilkinson" aria-label="X"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" class="hover:text-sky-400 h-6 w-6 fill-current text-gray-200"><path d="M 5.9199219 6 L 20.582031 27.375 L 6.2304688 44 L 9.4101562 44 L 21.986328 29.421875 L 31.986328 44 L 44 44 L 28.681641 21.669922 L 42.199219 6 L 39.029297 6 L 27.275391 19.617188 L 17.933594 6 L 5.9199219 6 z M 9.7167969 8 L 16.880859 8 L 40.203125 42 L 33.039062 42 L 9.7167969 8 z"></path></svg></a>
+                    <a class="flex items-center justify-center w-8 h-8 rounded-md border border-white/10 text-slate-500 hover:border-sky-500/40 hover:text-sky-400 transition-all duration-200" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/andrew-wilkinson-b06230121/" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="hover:text-sky-400 h-6 w-6 fill-current text-gray-200"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path></svg></a></div>
+                <div class="flex items-center gap-2 text-xs text-slate-600 font-sans"><a class="hover:text-slate-400 transition-colors" target="_blank" rel="noopener noreferrer" href="https://github.com/BlazorStatic/BlazorStatic">
+                        Built with BlazorStatic
+                    </a>
+                    <span>·</span>
+                    <span>© 2026 ARMWilkinson</span></div></div></footer></div></div>
+        <blazor-focus-on-navigate selector="h1"></blazor-focus-on-navigate></body></html>

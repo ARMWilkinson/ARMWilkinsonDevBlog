@@ -1,0 +1,35 @@
+﻿@inherits LayoutComponentBase
+
+<div class="mx-auto max-w-2xl px-5 sm:px-8 xl:max-w-3xl">
+    <div class="flex min-h-screen flex-col">
+        <NavMenu />
+        <main class="flex-1 py-10">
+            @Body
+        </main>
+        <footer class="border-t border-white/[0.06] py-10 mt-8">
+            <div class="flex flex-col items-center gap-4">
+                <div class="flex gap-3">
+                    <a class="flex items-center justify-center w-8 h-8 rounded-md border border-white/10 text-slate-500 hover:border-sky-500/40 hover:text-sky-400 transition-all duration-200"
+                       target="_blank" rel="noopener noreferrer" href="@WebsiteKeys.GitHubAccount" aria-label="GitHub">
+                        <Svg Icon="Svg.Icons.Github" />
+                    </a>
+                    <a class="flex items-center justify-center w-8 h-8 rounded-md border border-white/10 text-slate-500 hover:border-sky-500/40 hover:text-sky-400 transition-all duration-200"
+                       target="_blank" rel="noopener noreferrer" href="@WebsiteKeys.X" aria-label="X">
+                        <Svg Icon="Svg.Icons.X" />
+                    </a>
+                    <a class="flex items-center justify-center w-8 h-8 rounded-md border border-white/10 text-slate-500 hover:border-sky-500/40 hover:text-sky-400 transition-all duration-200"
+                       target="_blank" rel="noopener noreferrer" href="@WebsiteKeys.LinkedInAccount" aria-label="LinkedIn">
+                        <Svg Icon="Svg.Icons.LinkedIn" />
+                    </a>
+                </div>
+                <div class="flex items-center gap-2 text-xs text-slate-600 font-sans">
+                    <a class="hover:text-slate-400 transition-colors" target="_blank" rel="noopener noreferrer" href="https://github.com/BlazorStatic/BlazorStatic">
+                        Built with BlazorStatic
+                    </a>
+                    <span>·</span>
+                    <span>© @DateTime.Now.Year ARMWilkinson</span>
+                </div>
+            </div>
+        </footer>
+    </div>
+</div>

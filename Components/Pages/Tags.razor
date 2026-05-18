@@ -1,0 +1,68 @@
+@page "/tags/{tagName}"
+@page "/tags"
+@using BlazorStatic
+@using BlazorStatic.Services
+@using System.Net
+@inject BlazorStaticContentService<BlogFrontMatter> blazorStaticContentService
+
+@if (TagName == null)
+{
+    <div class="py-10">
+        <div class="mb-10">
+            <p class="text-[11px] uppercase tracking-widest text-sky-400 font-mono mb-3">Browse</p>
+            <H1>Tags</H1>
+            <p class="mt-3 text-sm text-slate-500 font-sans">All topics covered on this blog.</p>
+        </div>
+
+        <div class="flex flex-wrap gap-3">
+            @{
+                var tagsWithCount = blazorStaticContentService.Posts
+                    .SelectMany(x => x.Tags)
+                    .GroupBy(x => x)
+                    .Select(group => new { Tag = group.Key, Count = group.Count() })
+                    .OrderByDescending(x => x.Count);
+
+                foreach (var tagGroup in tagsWithCount)
+                {
+                    <a class="group inline-flex items-center gap-2 text-[10px] font-mono uppercase tracking-wider text-sky-400 bg-sky-500/10 border border-sky-500/20 px-3 py-1.5 rounded-sm hover:bg-sky-500/20 hover:border-sky-500/40 transition-colors duration-200"
+                       href="@($"{blazorStaticContentService.Options.Tags.TagsPageUrl}/{WebUtility.UrlEncode(tagGroup.Tag.Name)}")">
+                        @tagGroup.Tag.Name
+                        <span class="text-sky-500/50 group-hover:text-sky-400/70 transition-colors">@tagGroup.Count</span>
+                    </a>
+                }
+            }
+        </div>
+    </div>
+    return;
+}
+
+<div class="py-10">
+    <div class="mb-10">
+        <a class="inline-flex items-center gap-1.5 text-[11px] uppercase tracking-widest text-slate-500 hover:text-sky-400 font-mono transition-colors mb-6 block"
+           href="@blazorStaticContentService.Options.Tags.TagsPageUrl">
+            ← All tags
+        </a>
+        <p class="text-[11px] uppercase tracking-widest text-sky-400 font-mono mb-3">Tag</p>
+        <H1>@WebUtility.UrlDecode(TagName)</H1>
+        <p class="mt-3 text-sm text-slate-500 font-sans">
+            @(posts?.Count == 1 ? "1 post" : $"{posts?.Count ?? 0} posts") tagged with this topic.
+        </p>
+    </div>
+
+    <PostsList Posts="posts" />
+</div>
+
+@code {
+    [Parameter] public string? TagName { get; set; }
+
+    List<Post<BlogFrontMatter>>? posts;
+
+    protected override void OnInitialized()
+    {
+        if (string.IsNullOrWhiteSpace(TagName)) return;
+        var decoded = WebUtility.UrlDecode(TagName);
+        posts = blazorStaticContentService.Posts
+            .Where(x => x.FrontMatter.Tags.Contains(decoded))
+            .ToList();
+    }
+}

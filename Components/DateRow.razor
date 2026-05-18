@@ -1,0 +1,19 @@
+@using System.Globalization
+@if (Updated.HasValue)
+{
+    @DateInRow("Updated", Updated.Value)
+}
+@DateInRow("Published", Published)
+
+@code {
+    [Parameter, EditorRequired] public DateTime Published { get; set; }
+    [Parameter, EditorRequired] public DateTime? Updated { get; set; }
+
+    RenderFragment DateInRow(string label, DateTime date) => @<div class="flex items-center gap-2 mb-1">
+        <span class="text-[10px] uppercase tracking-widest text-slate-600 font-mono">@label</span>
+        <time class="text-sm text-slate-400 font-sans"
+              datetime="@date.ToString("yyyy-MM-ddTHH:mm:ss.fffK", CultureInfo.InvariantCulture)">
+            @date.ToString("d MMMM, yyyy", new CultureInfo("en-US"))
+        </time>
+    </div>;
+}

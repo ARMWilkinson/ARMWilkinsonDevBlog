@@ -15,6 +15,27 @@
                 }
     </script>
 
+    <style>@view-transition {
+            navigation: auto;
+        }
+
+        @media (prefers-reduced-motion: no-preference) {
+            ::view-transition-old(root) {
+                animation: fade-out 0.25s ease-out;
+            }
+            ::view-transition-new(root) {
+                animation: fade-in 0.25s ease-in;
+            }
+        }
+
+        @keyframes fade-out {
+            to { opacity: 0; }
+        }
+        @keyframes fade-in {
+            from { opacity: 0; }
+        }
+    </style>
+
 
     </head>
 

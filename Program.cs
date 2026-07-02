@@ -61,10 +61,10 @@ app.Run();
 
 public static class WebsiteKeys
 {
-    public const string GitHubRepo = "https://github.com/BlazorStatic/ARMWilkinson";
+    public const string GitHubRepo = "https://github.com/ARMWilkinson/ARMWilkinsonDevBlog";
     public const string X = "https://x.com/ARMWilkinson";
     public const string Title = "ARMWilkinson";
-    public const string BlogPostStorageAddress = $"{GitHubRepo}/tree/main/Content/Blog";
+    public const string BlogPostStorageAddress = $"{GitHubRepo}/blob/master/Content/Blog";
     public const string GitHubAccount = "https://github.com/ARMWilkinson";
     public const string LinkedInAccount = "https://www.linkedin.com/in/andrew-wilkinson-b06230121/";
 }

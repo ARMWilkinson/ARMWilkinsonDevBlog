@@ -6,5 +6,5 @@ generator
 
 ## Acknowledgements
 
-The theme for ARMWilkinsonDevBlog was heavily inspired
+The theme for armwilkinson.dev was heavily inspired
 by [Tailwind Next.js Starter Blog](https://github.com/timlrx/tailwind-nextjs-starter-blog).
